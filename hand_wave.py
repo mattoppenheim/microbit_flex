@@ -29,7 +29,7 @@ def find_comport(pid, vid, baud):
     return None
 
 
-def flash(command=BLINK1_PATH, on=COLOUR_ON, duration=1000, repeat=1):
+def flash(command=BLINK1_PATH, on=COLOUR_ON, duration=500, repeat=1):
     ''' Flash the blink1. '''
     print('flashing')
     command_path = os.path.abspath(command)
@@ -57,8 +57,8 @@ def main():
         line = ser_micro.readline().decode('utf-8')
         if line:  # If it isn't a blank line
             if(detect_gesture(line)):
-                flash(repeat=1, duration=1000)
-        time.sleep(0.1)
+                flash(repeat=1, duration=500)
+        time.sleep(0.01)
     ser_micro.close()
                        
 
