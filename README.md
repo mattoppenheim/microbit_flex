@@ -1,4 +1,4 @@
-## hand_wave
+## Using a flex sensor as assistive technology
 
 A flex sensor is used to detect a small side ways hand movement. The flex sensor is connected to a BBC micro:bit. The microbit is connected to the communication device either directly through a USB port or using a home-made switch adapter cable. Build instructions for the home-made switch adapter cable are here:
 
