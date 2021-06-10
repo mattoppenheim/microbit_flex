@@ -12,6 +12,6 @@ The .hex files contains the hex files to write to the microbit board. The conten
 
 There are two .hex files depending on the use scenario.
 
-<b>microbit-hand_wave_blinkm.hex</b> works with <b>hand_wave.py</b> to make a blinkm LED flash when the device is triggered. The .py file goes on the communication device. A blink(1) (<https://blink1.thingm.com/)> programmable LED is connected to the communication device. When a trigger is sent from the micro:bit board connected to a USB port on the communication device, the blink(1) flashes.
+<b>flex_blinkm.hex</b> works with <b>flex_detect.py</b> to make a blinkm LED flash when the device is triggered. The .py file goes on the communication device. A blink(1) (<https://blink1.thingm.com/)> programmable LED is connected to the communication device. When a trigger is sent from the micro:bit board connected to a USB port on the communication device, the blink(1) flashes.
 
-<b>microbit-hand_wave_switch.hex</b> works with the home-made switch adapter cable connected to the communications device. Switch software needs to be running on the communication device to enable the trigger signals to control communication software.
+<b>flex_switch.hex</b> works with the home-made switch adapter cable connected to the communications device. Switch software needs to be running on the communication device to enable the trigger signals to control communication software.

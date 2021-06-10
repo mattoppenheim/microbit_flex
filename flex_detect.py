@@ -1,4 +1,4 @@
-''' Locate microbit and connect. Flash blink1m when gesture is detected. 
+''' Locate microbit and connect. Flash blink1m when gesture is detected.
 Dependencies: blink1 command line tool. '''
 
 import os
@@ -16,7 +16,7 @@ TRIGGER = 'wave'
 
 def find_comport(pid, vid, baud):
     ''' return a serial port '''
-    ser_port = serial.Serial(timeout = TIMEOUT)
+    ser_port = serial.Serial(timeout=TIMEOUT)
     ser_port.baudrate = baud
     ports = list(list_ports.comports())
     print('scanning ports')
@@ -33,9 +33,9 @@ def flash(command=BLINK1_PATH, on=COLOUR_ON, duration=500, repeat=1):
     ''' Flash the blink1. '''
     print('flashing')
     command_path = os.path.abspath(command)
-    arglist = [command_path,'--rgb', COLOUR_ON, '--blink', str(repeat)]
-    subprocess.Popen(args=arglist, shell=False)         
-    
+    arglist = [command_path, '--rgb', COLOUR_ON, '--blink', str(repeat)]
+    subprocess.Popen(args=arglist, shell=False)
+
 
 def detect_gesture(line):
     print('{} microbit: {}'.format(time.strftime("%H:%M:%S"), line))
@@ -43,14 +43,14 @@ def detect_gesture(line):
         print('wave detected')
         return True
     return False
-        
-                       
+
+
 def main():
     print('looking for microbit')
     ser_micro = find_comport(PID_MICROBIT, VID_MICROBIT, 115200)
     if not ser_micro:
         print('microbit not found\nplug it in and run this script again')
-        return       
+        return
     print('opening and monitoring microbit port')
     ser_micro.open()
     while True:
@@ -60,10 +60,9 @@ def main():
                 flash(repeat=1, duration=500)
         time.sleep(0.01)
     ser_micro.close()
-                       
+
 
 if __name__ == '__main__':
     main()
     print('exiting')
 
-    
