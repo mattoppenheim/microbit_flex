@@ -1,0 +1,464 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="shortcut icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.3">
+    
+    
+      
+        <title>Handshake manual</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.3b61ea93.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.39b8e14a.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#flex-setup-instructions" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="." title="Handshake manual" class="md-header-nav__button md-logo" aria-label="Handshake manual">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      <div class="md-header-nav__ellipsis">
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            Handshake manual
+          </span>
+        </div>
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            
+              Flex setup instructions
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="Handshake manual" class="md-nav__button md-logo" aria-label="Handshake manual">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Handshake manual
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Flex setup instructions
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="." class="md-nav__link md-nav__link--active">
+      Flex setup instructions
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#system-overview" class="md-nav__link">
+    System overview
+  </a>
+  
+    <nav class="md-nav" aria-label="System overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#flex-sensor-module" class="md-nav__link">
+    Flex sensor module
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#switch-module" class="md-nav__link">
+    Switch module
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#safety" class="md-nav__link">
+    Safety
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operating-instructions" class="md-nav__link">
+    Operating instructions
+  </a>
+  
+    <nav class="md-nav" aria-label="Operating instructions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    Summary
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flex-sensor-board" class="md-nav__link">
+    Flex sensor board
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#switch-board" class="md-nav__link">
+    Switch board
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#system-overview" class="md-nav__link">
+    System overview
+  </a>
+  
+    <nav class="md-nav" aria-label="System overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#flex-sensor-module" class="md-nav__link">
+    Flex sensor module
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#switch-module" class="md-nav__link">
+    Switch module
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#safety" class="md-nav__link">
+    Safety
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operating-instructions" class="md-nav__link">
+    Operating instructions
+  </a>
+  
+    <nav class="md-nav" aria-label="Operating instructions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    Summary
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flex-sensor-board" class="md-nav__link">
+    Flex sensor board
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#switch-board" class="md-nav__link">
+    Switch board
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="flex-setup-instructions">Flex setup instructions</h1>
+<h2 id="system-overview">System overview</h2>
+<p>The flex system consists of two parts - the sensor module and the switch connector module.
+The participant uses the flex sensor which is attached to the sensor module.
+When the bend sensor is flexed beyond an adjustable threshold, a radio signal is sent to the switch module.
+The switch module connects to a switch adapter cable.
+This receives the radio signal from the sensor board and activates the switch adapter cable.
+The switch adapter cable sends a switch signal to the attached communication device.
+Both of these are made from a BBC micro:bit board slotted into a small expansion board.
+The micro:bit has a yellow 'kittenbot' cover while the expansion board is housed in a 3d printed case.
+The micro:bit can be easily pulled out of the expansion board. Just plug it back in if this happens.</p>
+<h3 id="flex-sensor-module">Flex sensor module</h3>
+<p>The flex sensor plugs into the flex sensor module board using a keyed connector.
+The amount that the flex sensor needs to be bent to send a switch trigger to the switch board is shown on the micro:bit as faint LEDs. The amount that the flex sensor is bent is shown as bright LEDs. Once there are more bright LEDs than faint LEDs, a bend event is registered by the micro:bit in the flex sensor module.
+A radio signal is then sent from this micro:bit to the micro:bit that is part of the switch module. </p>
+<h3 id="switch-module">Switch module</h3>
+<p>The switch module connects with the switch adapter cable using the audio plug.</p>
+<h2 id="safety">Safety</h2>
+<p>The BBC micro:bit was designed to be safe to use in education with 11-12 year-olds, so has safety designed in.</p>
+<p>Normal safety practice should be followed with the AAA batteries if they are used – keep them dry.</p>
+<p>It is best practice to use the AAA battery pack with the flex sensor board instead of the USB connection.</p>
+<h2 id="operating-instructions">Operating instructions</h2>
+<h3 id="summary">Summary</h3>
+<p>Place the flex sensor on the participant.
+Set the amount of bend needed to create a trigger signal.
+Connect the switch board to a switch adapter cable connected to the communication device.</p>
+<h3 id="flex-sensor-board">Flex sensor board</h3>
+<p>The board is powered using either a 2xAAA battery pack or from the USB socket. Both of these connectors are on the micro:bit board. Both power sources can be plugged at the same time.</p>
+<h3 id="switch-board">Switch board</h3>
+<p>This board is powered using either a 3xAAA battery pack or from the USB socket. I tend to use the USB socket as the board is next to the communication device which usually has a spare USB socket available to power it from.</p>
+<h1 id="troubleshooting">Troubleshooting</h1>
+<p>Check that the micro:bit is plugged in to the expansion board the correct way up. The battery packs sit on the top of the expansion board case. The LEDs and buttons on the micro:bit should point up.</p>
+<p>If you are using an untested triple AAA battery pack with the switch board, check that the polarity of the connector is correct.
+Take off the kittenbot cover from the micro:bit and look at the battery pack connector socket on the micro:bit.
+The polarity signs are printed on the circuit board. Some off the shelf battery packs have the polarity the wrong way around.
+This will not damage the board - it will not work though! I use a small screwdriver blade to pull up the plastic latch on the back of the connector above each crimped pin, pull out each crimped pin, then swap over which hole each one goes to in the connector.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="assets/javascripts/vendor.08c56446.min.js"></script>
+      <script src="assets/javascripts/bundle.6ced434e.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: ".",
+          features: [],
+          search: Object.assign({
+            worker: "assets/javascripts/worker/search.8c7e0a7e.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
