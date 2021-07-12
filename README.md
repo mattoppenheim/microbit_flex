@@ -1,5 +1,7 @@
 # Using a flex sensor as assistive technology
 
+Setup instructions are at: [https://hardwaremonkey.github.io/microbit_flex/](https://hardwaremonkey.github.io/microbit_flex/)
+
 Project details are at: [mattoppenheim.com/flex](mattoppenheim.com/flex)
 
 A flex sensor is used to detect a small side ways hand or other joint movement. This detection is used to control switchable software. The device is for people who rely on communication software, but cannot use regular controls such as buttons or joysticks.
