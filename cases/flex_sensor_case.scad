@@ -3,6 +3,8 @@ for micro:bit flex sensor board
 dimensions: mm
 dependencies: roundedcube at:
 https://gist.github.com/groovenectar/92174cb1c98c1089347e
+axis definitions:
+x: front face width, left to right y: case length, front face to rear z: case height, base to top
 Matthew Oppenheim 2021 */
 include <roundedcube_simple.scad>;
 include <2_aaa_battery_pack_stand.scad>;
@@ -47,7 +49,7 @@ tab_fraction_from_end = 0.15;
 
 total_z = height_internal + 2*wall;
 total_y = depth_internal + 2*wall;
-total_width = width_board + 2*wall + 2*width_clearance;
+total_x = width_board + 2*wall + 2*width_clearance;
 // delta to allow clearance
 delta = 0.2;
 
@@ -64,7 +66,7 @@ module outer_envelope()
 // roundedcube that envelopes all design
 {
     color([0.5, 0.5, 0, 0.2])
-    roundedcube_simple([total_width, total_y, total_z], false, 5);
+    roundedcube_simple([total_x, total_y, total_z], false, 5);
 }
 
 module inner_hollow()
@@ -94,11 +96,11 @@ module outer_shell()
         variable_resistor_socket();
         variable_resistor_recess();
         back_panel_opening();
-        engraving_mo();
-        engraving_flex();
-        engraving_top(top_text="sensor: top");
-        engraving_base(base_text="sensor: base");
-        engraving_battery_pack();
+        engraving_top(text="sensor: top", line=1);
+        engraving_top(text="battery pack holder", line=5);
+        engraving_base(base_text="sensor: base", line=1);
+        engraving_base(base_text="mattoppenheim.com\/", line=4);
+        engraving_base(base_text="flex", line=3);
     }
 }
 
@@ -135,21 +137,21 @@ module base_tab(){
 
 module back_panel_top_tabs(){
     // tabs along top of back panel
-    translate([total_width*tab_fraction_from_end-tab_width/2, depth_internal+wall, total_z-tab_height-wall]) 
+    translate([total_x*tab_fraction_from_end-tab_width/2, depth_internal+wall, total_z-tab_height-wall]) 
     top_tab();
-    translate([total_width*(1-tab_fraction_from_end)-tab_width/2, depth_internal+wall, total_z-tab_height-wall]) 
+    translate([total_x*(1-tab_fraction_from_end)-tab_width/2, depth_internal+wall, total_z-tab_height-wall]) 
     top_tab();
 }
 
 module side_slot(){
-    // side slot to allow case to flex
+    // single side slot to allow case to flex
     cube([wall+2*delta, slot_depth, slot_height]);
 }
 
 module side_slots(){
-    // side slots to allow flexing to get case on
+    // all of the side slots to allow flexing to get case on
     translate([-delta, total_y-slot_depth+wall, total_z/2-slot_height/2]) side_slot(); 
-    translate([-delta+total_width-wall, total_y-slot_depth+wall, total_z/2-slot_height/2]) side_slot(); 
+    translate([-delta+total_x-wall, total_y-slot_depth+wall, total_z/2-slot_height/2]) side_slot(); 
 }
 
 module strain_relief(){
@@ -161,55 +163,35 @@ module strain_relief(){
 module strain_reliefs(){
     // holes at end of side slots
     translate([-delta, total_y-slot_depth+wall, total_z/2]) strain_relief();
-    translate([total_width-wall-delta, total_y-slot_depth+wall, total_z/2]) strain_relief();
+    translate([total_x-wall-delta, total_y-slot_depth+wall, total_z/2]) strain_relief();
 }
 
-module engraving_mo(){
-    // Text to go on case base.
-    //translate([wall, total_y/3, total_z-wall/3+delta])
-    translate([wall+text_height, total_y/2, -delta])
-    linear_extrude(wall/3) 
-    mirror([0,1,0])
-    text("mattoppenheim.com\/", size=text_height);    
-}
-
-module engraving_flex(){
-    // Text to go on case base.
-    //translate([wall, total_y/3-text_height-line_spacing, total_z-wall/3+delta])
-    translate([wall+text_height, total_y/2+text_height+line_spacing, -delta])
-    mirror([0,1,0])
-    linear_extrude(wall/3) 
-    text("flex", size=text_height);
-}
-
-module engraving_top(top_text){
+module engraving_top(text, line){
     // Text to go on case top. 
-    translate([wall+text_height, text_height+2*line_spacing, total_z-wall/3+delta])
+    // string base_text: text to display
+    // int line: number of lines from top edge of case to place text
+    translate([wall, line*(text_height+line_spacing), total_z-wall/3+delta])
     linear_extrude(wall/3) 
-    text(top_text, size=text_height);
+    text(text, size=text_height);
 }
 
-module engraving_base(base_text){
+module engraving_base(base_text, line){
     // Text to go on case base. 
-    translate([wall+text_height, text_height+5*line_spacing, -delta])
+    // string base_text: text to display
+    // int line: number of lines from top edge of case to place text
+    translate([total_x-wall, (line+1)*(text_height+line_spacing), -delta])
     linear_extrude(wall/3) 
-    mirror([0,1,0])
+    //mirror([0,1,0])
+    mirror([1,0,0])
     text(base_text, size=text_height);
 }
 
-module engraving_battery_pack(){
-    // Text to go on case top - battery pack. 
-    translate([wall+text_height, total_y-2*text_height-line_spacing, total_z-wall/3+delta])
-    linear_extrude(wall/3) 
-    text("battery pack holder", size=text_height);
-}
-
 // x offset for the battery pack
-battery_pack_x = (total_width-pack_total_x)/2;
+battery_pack_x = (total_x-pack_total_x)/2;
 
 module battery_pack(){
     // Support for 2xaaa battery pack.
-    translate([battery_pack_x, total_y-pack_y-wall-support_depth, total_z-support_depth])
+    translate([battery_pack_x, total_y-pack_y-2*wall, total_z-wall])
     2_aaa_assembly();
 }
 

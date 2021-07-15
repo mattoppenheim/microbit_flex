@@ -20,7 +20,7 @@ A radio signal is then sent from this micro:bit to the micro:bit that is part of
 
 ### Switch module
 
-The switch module connects with the switch adapter cable using the audio plug.
+The switch module connects with the switch adapter cable using the audio plug. When a trigger signal is received from the sensor module, the switch module acts to send a switch signal through the switch adapter cable to the attached communication device. A JoyAdpater cable was used for testing.
 
 ## Safety
 

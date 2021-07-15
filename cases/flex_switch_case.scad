@@ -68,10 +68,10 @@ module outer_shell()
         side_slots();
         strain_reliefs();
         back_panel_opening();
-        engraving_mo();
-        engraving_flex();
         engraving_top(top_text="switch: top");
-        engraving_base(base_text="switch: base");
+        engraving_base(text="switch: base", line=1);
+        engraving_base(text="mattoppenheim.com\/", line=4);
+        engraving_base(text="flex", line=3);
         engraving_battery_pack();
     }
 }
@@ -84,7 +84,7 @@ module base_supports(){
     // supports for base of PCB connector
     translate([x_offset, total_y-base_support_depth-delta, wall ])
     base_support();
-    translate([total_width-x_offset-base_support_width, total_y-base_support_depth-delta, wall ])
+    translate([total_x-x_offset-base_support_width, total_y-base_support_depth-delta, wall ])
     base_support();
 }
 
@@ -97,21 +97,22 @@ module top_supports(){
     //supports for top of PCB connector
     translate([x_offset, total_y-top_support_depth-delta, total_z-wall-top_support_height])
     top_support();
-    translate([total_width-x_offset-top_support_width, total_y-top_support_depth-delta, total_z-wall-top_support_height])
+    translate([total_x-x_offset-top_support_width, total_y-top_support_depth-delta, total_z-wall-top_support_height])
     top_support();
 }
 
 module top_tabs(){
     // retaining tab at top of back of case
-    translate([total_width*tab_fraction_from_end-tab_width/2, depth_internal+wall-delta, total_z-tab_height-wall-top_support_height]) 
+    translate([total_x*tab_fraction_from_end-tab_width/2, depth_internal+wall-delta, total_z-tab_height-wall-top_support_height]) 
     top_tab();
-    translate([total_width*(1-tab_fraction_from_end)-tab_width/2, depth_internal+wall-delta, total_z-tab_height-wall-top_support_height])
+    translate([total_x*(1-tab_fraction_from_end)-tab_width/2, depth_internal+wall-delta, total_z-tab_height-wall-top_support_height])
     top_tab();
 }
 
 module battery_pack(){
     // Support for 2xaaa battery pack.
-    translate([battery_pack_x, total_y-pack_y-wall-support_depth, total_z-support_depth])
+    //translate([battery_pack_x, total_y-pack_y-wall-support_depth, total_z-support_depth])
+    translate([battery_pack_x, 0, total_z-support_depth])
     3_aaa_assembly();
 }
 
