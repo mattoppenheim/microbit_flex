@@ -252,18 +252,12 @@
     Switch module components
   </a>
   
-    <nav class="md-nav" aria-label="Switch module components">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#operation-summary" class="md-nav__link">
-    Operation summary
-  </a>
-  
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#system-summary" class="md-nav__link">
+    System summary
+  </a>
   
 </li>
       
@@ -275,9 +269,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#operating-instructions-detailed" class="md-nav__link">
-    Operating instructions detailed
+  <a href="#setup" class="md-nav__link">
+    Setup
   </a>
+  
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#increasing-how-much-bend-is-needed-to-create-a-trigger" class="md-nav__link">
+    Increasing how much bend is needed to create a trigger
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decreasing-how-much-bend-is-needed-to-create-a-trigger" class="md-nav__link">
+    Decreasing how much bend is needed to create a trigger
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use" class="md-nav__link">
+    Use
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#self-test" class="md-nav__link">
+    Self-test
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -354,18 +382,12 @@
     Switch module components
   </a>
   
-    <nav class="md-nav" aria-label="Switch module components">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#operation-summary" class="md-nav__link">
-    Operation summary
-  </a>
-  
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#system-summary" class="md-nav__link">
+    System summary
+  </a>
   
 </li>
       
@@ -377,9 +399,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#operating-instructions-detailed" class="md-nav__link">
-    Operating instructions detailed
+  <a href="#setup" class="md-nav__link">
+    Setup
   </a>
+  
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#increasing-how-much-bend-is-needed-to-create-a-trigger" class="md-nav__link">
+    Increasing how much bend is needed to create a trigger
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decreasing-how-much-bend-is-needed-to-create-a-trigger" class="md-nav__link">
+    Decreasing how much bend is needed to create a trigger
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use" class="md-nav__link">
+    Use
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#self-test" class="md-nav__link">
+    Self-test
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -458,10 +514,9 @@ The switch adapter cable sends a switch signal to the attached communication dev
 <p>case</p>
 <p>battery pack for 3xAAA connectors (optional)</p>
 <p>USB cable (optional - either the battery pack or the USB cable should be used to power the module)</p>
-<h3 id="operation-summary">Operation summary</h3>
+<h2 id="system-summary">System summary</h2>
 <p>The switch module connects with the switch adapter cable using the audio plug. When a trigger signal is received from the sensor module, the switch module acts to send a switch signal through the switch adapter cable to the attached communication device. A JoyAdapter cable was used for testing.</p>
 <p>When a flex is detected, a checkerboard pattern is shown on the LEDs on the micro:bits on both the sensor board and the switch board, as shown in the figure below. A switch signal is sent to the adapter cable at the same time. </p>
-<p>Pressing both the A and B buttons at the same time simulates a flex being detected. Use this to test the operation of the adapter cable.</p>
 <figure>
   <img src="./images/checker.jpg" alt=""/>
   <figcaption>flex detected pattern on micro:bit LEDs.</figcaption>
@@ -469,7 +524,7 @@ The switch adapter cable sends a switch signal to the attached communication dev
 
 <h2 id="switch-module">Switch module</h2>
 <p>This module is powered using either a 3xAAA battery pack or from the USB socket.</p>
-<h2 id="operating-instructions-detailed">Operating instructions detailed</h2>
+<h2 id="setup">Setup</h2>
 <p>The flex sensor only measures bend when bent in one direction. There is a sticker on the flex sensor saying 'bend away'. The sticker should be on the top of the bridge shape formed when the sensor is bent. Please see the photo below. Bending the sensor in the opposite direction does not cause any damage, it is just that the flex sensor does not respond in this direction.</p>
 <figure>
   <img src="./images/flex_sensor_bend_direction_sm.jpg" alt=""/>
@@ -486,6 +541,7 @@ The switch adapter cable sends a switch signal to the attached communication dev
 
 <p>The setpoint which causes a trigger to be sent is adjusted using the blue knob on the flex sensor board. This controls how many bright LEDs are on the display without the sensor being flexed.</p>
 <p>The number of faint LEDs on the display is set using the A and B buttons on the micro:bit. </p>
+<h3 id="increasing-how-much-bend-is-needed-to-create-a-trigger">Increasing how much bend is needed to create a trigger</h3>
 <p>Pressing the B button causes a single extra faint LED to be added to the display. A '+' symbol is displayed each time the button is pressed. Please see the picture below. </p>
 <p>This acts to increase the amount of flex needed to cause a trigger.</p>
 <figure>
@@ -493,6 +549,7 @@ The switch adapter cable sends a switch signal to the attached communication dev
   <figcaption>Increasing the amount of bend needed to cause a trigger.</figcaption>
 </figure>
 
+<h3 id="decreasing-how-much-bend-is-needed-to-create-a-trigger">Decreasing how much bend is needed to create a trigger</h3>
 <p>Pressing the A button causes a single faint LED to be removed from the display. A '-' symbol is displayed each time the button is pressed. Please see the picture below. </p>
 <p>This acts to decrease the amount of flex needed to cause a trigger. </p>
 <figure>
@@ -500,6 +557,7 @@ The switch adapter cable sends a switch signal to the attached communication dev
   <figcaption>Decreasing the amount of bend needed to cause a trigger.</figcaption>
 </figure>
 
+<h3 id="use">Use</h3>
 <p>Before use, ensure that there are more faint LEDs showing than bright LEDs. </p>
 <p>One possible application is to have the flex sensor pre-bent at the 'rest' position and during use the sensor is further flexed. The current system allows this to be setup.</p>
 <p>During use, the switch module shows a diamond pattern, as shown in the photo below.</p>
@@ -514,6 +572,8 @@ The switch adapter cable sends a switch signal to the attached communication dev
   <figcaption>Pattern shown on the flex and the switch modules when a flex is detected.</figcaption>
 </figure>
 
+<h3 id="self-test">Self-test</h3>
+<p>Pressing both the A and B buttons at the same time simulates a flex being detected. Use this to test the operation of the adapter cable.</p>
 <h1 id="troubleshooting">Troubleshooting</h1>
 <p>If the micro:bit pulls out of the expansion board, just plug it back in.
 There is a 3D printed clip to prevent the board from easily coming out of the expansion board.</p>
