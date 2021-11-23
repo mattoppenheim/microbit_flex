@@ -454,6 +454,7 @@
                 
                 <h1 id="flex-setup-instructions">Flex setup instructions</h1>
 <p>Matthew Oppenheim - matt@mattoppenheim.com</p>
+<p>github <a href="https://github.com/hardwaremonkey/microbit_flex">https://github.com/hardwaremonkey/microbit_flex</a></p>
 <h2 id="safety">Safety</h2>
 <p>Normal safety practice should be followed with the AAA batteries if they are used – keep them dry.</p>
 <h2 id="system-overview">System overview</h2>
@@ -532,7 +533,10 @@ The switch adapter cable sends a switch signal to the attached communication dev
 </figure>
 
 <p>The flex sensor plugs into the flex sensor module board using a keyed connector.</p>
-<p>There are bright LEDs and faint LEDs on the micro:bit display. As the flex increases, the number of bright LEDs increases. When the number of bright LEDs exceeds the number of faint LEDs, a trigger is sent.</p>
+<p>There are bright LEDs and faint LEDs on the micro:bit display at power-up.
+As the flex increases, the faint LEDs will sequentially become bright.
+The flex sensor will send a trigger when there are only bright LEDs on the display.
+The more faint LEDs that are on before bending the flex sensor, the more that the flex sensor needs to be bent to send a trigger.</p>
 <p>A photo showing the bright and faint LEDs on the micro:bit is shown below.</p>
 <figure>
   <img src="./images/flex_detect_operating.jpg" alt=""/>
